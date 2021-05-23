@@ -13,7 +13,12 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormlyModule.forRoot({ extras: { lazyRender: true } }),
+    FormlyModule.forRoot({
+      extras: { lazyRender: true },
+      validationMessages: [
+        { name: 'required', message: 'This field is required' },
+      ],
+    }),
     FormlyMaterialModule,
   ],
   providers: [],

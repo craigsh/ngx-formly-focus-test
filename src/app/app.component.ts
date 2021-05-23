@@ -1,7 +1,6 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
@@ -33,13 +32,12 @@ export class AppComponent implements AfterViewInit {
         },
         blur: () => {
           console.log('blurred');
-          //console.trace();
         },
       },
     },
   ];
 
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor() {}
 
   onSubmit() {
     console.log(this.model);
@@ -49,6 +47,5 @@ export class AppComponent implements AfterViewInit {
 
   onShow() {
     this.show = true;
-    this.cdRef.markForCheck();
   }
 }
